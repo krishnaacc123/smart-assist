@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     outDir: 'dist', // Default is 'dist', but you can change this
     lib: {
-      entry: './src/main.js',
+      entry: './src/main.jsx',
       name: 'main',
       fileName: 'chatbot',
     },

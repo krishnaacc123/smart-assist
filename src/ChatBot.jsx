@@ -14,6 +14,11 @@ const ChatBotContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
+  position: fixed;
+  bottom: 60px; /* Adjusted to be above the button */
+  right: 20px;
+  background: white;
+  z-index: 999;
 `;
 
 const Header = styled.div`
