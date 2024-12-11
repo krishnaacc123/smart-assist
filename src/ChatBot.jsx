@@ -1,5 +1,5 @@
 // ChatBot.js
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { Button } from "@razorpay/blade/components"; // Replace with actual import
 import { BladeProvider } from '@razorpay/blade/components';
@@ -49,12 +49,12 @@ const Input = styled.input`
   margin-right: 5px;
 `;
 
-const ChatBot = () => {
+const ChatBot = forwardRef((props, ref) => {
   const [messages, setMessages] = React.useState(['Hi! How can I help you?']);
   const inputRef = React.useRef(null);
   return (
     <BladeProvider themeTokens={bladeTheme} colorScheme="light">
-      <ChatBotContainer>
+      <ChatBotContainer ref={ref}>
         <Header>ChatBot</Header>
         <MessageArea>
           <p>
@@ -73,6 +73,8 @@ const ChatBot = () => {
       </ChatBotContainer>
     </BladeProvider>
   );
-};
+});
+
+ChatBot.displayName = 'ChatBot';
 
 export default ChatBot;
